@@ -21,6 +21,7 @@ export const Header: React.FC = () => {
     setSelectedCategoryFilter,
     selectedCategoryFilter,
     settings,
+    replayIntroAnimation,
   } = useStore();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -71,6 +72,17 @@ export const Header: React.FC = () => {
               className="flex items-center text-left focus:outline-none"
             >
               <LogoElMago size="md" />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => replayIntroAnimation()}
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#252528] hover:bg-[#6C2BD9]/25 border border-[#343438] hover:border-[#6C2BD9] text-[10.5px] font-mono text-stone-300 hover:text-white transition-all shadow-sm cursor-pointer"
+              title="Volver a reproducir la animación de inicio"
+            >
+              <BrandStar size={11} color="#fbbf24" />
+              <span className="hidden sm:inline">Ver Animación</span>
+              <span className="sm:hidden">Intro</span>
             </button>
           </div>
 

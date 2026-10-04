@@ -125,6 +125,7 @@ export const AdminDashboard: React.FC = () => {
     updateSettings,
     resetToDefaults,
     setActiveView,
+    replayIntroAnimation,
   } = useStore();
 
   // Authentication state
@@ -1314,14 +1315,25 @@ export const AdminDashboard: React.FC = () => {
                 </div>
               </div>
 
-              <div className="pt-2 flex items-center justify-between">
-                <button
-                  type="submit"
-                  className="py-3 px-7 rounded-xl bg-[#6C2BD9] hover:bg-[#7C3AED] text-white font-condensed font-extrabold uppercase tracking-wider text-sm flex items-center gap-2 shadow-lg"
-                >
-                  <Check size={16} />
-                  <span>GUARDAR IMAGEN Y ENCUADRE DE INICIO</span>
-                </button>
+              <div className="pt-2 flex flex-wrap items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <button
+                    type="submit"
+                    className="py-3 px-7 rounded-xl bg-[#6C2BD9] hover:bg-[#7C3AED] text-white font-condensed font-extrabold uppercase tracking-wider text-sm flex items-center gap-2 shadow-lg"
+                  >
+                    <Check size={16} />
+                    <span>GUARDAR IMAGEN Y ENCUADRE DE INICIO</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => replayIntroAnimation()}
+                    className="py-3 px-4 rounded-xl bg-[#1C1C1E] hover:bg-[#6C2BD9]/20 text-[#fbbf24] hover:text-white font-condensed font-bold uppercase text-xs flex items-center gap-2 border border-[#343438] hover:border-[#6C2BD9] transition-all"
+                  >
+                    <Sparkles size={14} className="text-[#fbbf24]" />
+                    <span>PROBAR ANIMACIÓN DE INICIO</span>
+                  </button>
+                </div>
 
                 <button
                   type="button"

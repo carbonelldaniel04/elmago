@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import {
   Product,
   Category,
@@ -74,6 +74,11 @@ interface StoreContextType {
   // Orders Actions
   updateOrderStatus: (orderId: string, status: OrderStatus) => void;
   createOrder: (orderData: Omit<Order, 'id' | 'orderNumber' | 'createdAt'>) => Order;
+
+  // Intro animation
+  showIntroAnimation: boolean;
+  setShowIntroAnimation: (show: boolean) => void;
+  replayIntroAnimation: () => void;
 
   // Settings Actions
   updateSettings: (updates: Partial<StoreSettings>) => void;
@@ -186,6 +191,14 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
   const [isB2BModalOpen, setIsB2BModalOpen] = useState<boolean>(false);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
+  const [showIntroAnimation, setShowIntroAnimation] = useState<boolean>(true);
+
+  const replayIntroAnimation = useCallback(() => {
+    setShowIntroAnimation(false);
+    setTimeout(() => {
+      setShowIntroAnimation(true);
+    }, 40);
+  }, []);
 
   // Sync to localStorage
   useEffect(() => {
@@ -502,6 +515,9 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         deleteCategory,
         updateOrderStatus,
         createOrder,
+        showIntroAnimation,
+        setShowIntroAnimation,
+        replayIntroAnimation,
         updateSettings,
         resetToDefaults,
       }}

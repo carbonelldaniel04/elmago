@@ -90,3 +90,77 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #6C2BD9;
 }
+
+/* Animations for Intro and Stars */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(6deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(8px) rotate(-8deg);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.18);
+    filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.9));
+  }
+}
+
+@keyframes twinkle-violet {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.88);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.22);
+    filter: drop-shadow(0 0 14px rgba(108, 43, 217, 0.85));
+  }
+}
+
+@keyframes pulse-aura {
+  0%, 100% {
+    transform: scale(0.94);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.75;
+  }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 3.5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 4s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 2.2s ease-in-out infinite;
+}
+
+.animate-twinkle-violet {
+  animation: twinkle-violet 2.6s ease-in-out infinite;
+}
+
+.animate-pulse-aura {
+  animation: pulse-aura 3s ease-in-out infinite;
+}

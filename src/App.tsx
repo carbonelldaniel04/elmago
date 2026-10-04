@@ -21,6 +21,7 @@ import { CorporateModal } from './components/corporate/CorporateModal';
 import { SearchModal } from './components/common/SearchModal';
 import { WhatsAppButton } from './components/common/WhatsAppButton';
 import { ChatBot } from './components/chat/ChatBot';
+import { IntroAnimation } from './components/common/IntroAnimation';
 
 const MainAppContent: React.FC = () => {
   const { activeView, setActiveView } = useStore();
@@ -74,6 +75,7 @@ const MainAppContent: React.FC = () => {
       <SearchModal />
       <WhatsAppButton />
       <ChatBot />
+      <IntroAnimation />
     </div>
   );
 };
