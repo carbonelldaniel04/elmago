@@ -188,7 +188,12 @@ ${catalogText}
   // Mount Vite middleware in development or serve built files in production
   if (!isProduction) {
     const vite = await createViteServer({
-      server: { middlewareMode: true },
+      server: {
+        middlewareMode: true,
+        // The hosted preview proxies HTTP but does not support Vite's HMR
+        // WebSocket reliably, so prevent the Vite client from connecting.
+        hmr: false,
+      },
       appType: 'spa',
     });
     app.use(vite.middlewares);
