@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-brand: 'Permanent Marker', 'Kaushan Script', cursive, sans-serif;
+    --font-mago: 'Permanent Marker', 'Kaushan Script', cursive, sans-serif;
+    --font-tienda: 'Fredoka', 'Poppins', sans-serif;
+    --font-condensed: 'Barlow Condensed', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    /* Tienda El Mago Palette: Violeta + Grafito */
+    --color-violet: #6C2BD9;
+    --color-violet-hover: #7C3AED;
+    --color-graphite: #1C1C1E;
+    --color-gray-sec: #343438;
+    --color-gray-light: #E5E5E3;
+    --color-white: #FFFFFF;
+  }
+}
+
+.font-brand, .font-mago {
+  font-family: 'Permanent Marker', 'Kaushan Script', cursive, sans-serif;
+}
+
+.font-script {
+  font-family: 'Kaushan Script', cursive, sans-serif;
+}
+
+.font-tienda {
+  font-family: 'Fredoka', 'Poppins', sans-serif;
+}
+
+.font-condensed {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.font-body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Violet brand accents */
+.bg-brand-violet {
+  background-color: #6C2BD9;
+}
+
+.bg-brand-graphite {
+  background-color: #1C1C1E;
+}
+
+.border-brand-gray {
+  border-color: #343438;
+}
+
+.text-brand-violet {
+  color: #6C2BD9;
+}
+
+/* Violet glow effect utilities */
+.glow-violet-sm {
+  box-shadow: 0 0 15px -3px rgba(108, 43, 217, 0.3);
+}
+
+.glow-violet-md {
+  box-shadow: 0 0 25px -5px rgba(108, 43, 217, 0.4);
+}
+
+.glow-violet-lg {
+  box-shadow: 0 0 40px -8px rgba(108, 43, 217, 0.5);
+}
+
+.text-glow-violet {
+  text-shadow: 0 2px 14px rgba(108, 43, 217, 0.4);
+}
+
+/* Custom scrollbar with refined dark graphite aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1C1C1E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #343438;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6C2BD9;
+}

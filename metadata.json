@@ -1,0 +1,6 @@
+{
+  "name": "Tienda El Mago - Indumentaria y Calzado de Trabajo",
+  "description": "Tienda oficial de indumentaria laboral y calzado de seguridad. Ropa de trabajo resistente, de alta calidad y soluciones corporativas para empresas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
